@@ -1,0 +1,117 @@
+body {
+    background-color: #1E1E1E;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2F4225;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul li a.active {
+    color: #A3D977;
+}
+
+/* Contenu principal */
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Avatar à gauche */
+.profile {
+    margin: 10px;
+    width: 30%;
+    background: #2F4225;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #ddd;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Compétences à droite */
+.container-skills {
+    margin: 10px;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 20px;
+    background: #2F4225;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Style des compétences */
+.skill {
+    background: #3D5731;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: #3D5731;
+    border-radius: 5px;
+    position: relative;
+}
+
+.skill-fill {
+    height: 10px;
+    background: #A3D977;
+    border-radius: 5px;
+}
