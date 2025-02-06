@@ -3,117 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="public/css/index.css">
-    <link rel="stylesheet" href="public/css/component/navbar.css">
+    <title>A propos de moi</title>
+    <link rel="stylesheet" href="../public/css/index.css">
 </head>
 <body>
-
-    <nav class="navbar" id="navbar"></nav>
-      
-
-    <div class="content">
-        <!-- Section Avatar -->
-        <div class="profile">
-            <div class="avatar"></div>
-            <p>Marina - Développeuse Web</p>
-        </div>
-        <div class="right-section">
-            <!-- Petite description -->
-            <div class="description">
-                <p><strong>Qui suis-je ?</strong></p>
-                <p>
-                    Je suis une élève en 2ème année de BTS SIO 
-                    
-                    Je suis en option SLAM, développement .Lors de mon Cursus, j’ai pu travailler avec certains languages de programmation, tel que le Java, NodeJS, Python, php, C#.
-                    
-                    du coté FrontEnd j’ai surtout utilisé du html/css et tailwind.
-                    
-                    J’ai aussi pu faire en externe à la formation des petits cours sur la cinématique inversée pour un robot hexapode.
-                </p>
-            </div>
-         <!-- Section Compétences -->
-          <div class="container-skills">
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg (3).png" alt="Compétence 1">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 60%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="Trotiflex.github.io/public/image
-                        /25%.png
-                        " class="star">
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg (2).png" alt="Compétence 2">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 30%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="public/image/30%.png" class="star">
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg (4).png" alt="Compétence 2">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 75%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="public/image/75%.png" class="star">
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg (6).png" alt="Compétence 2">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 30%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="public/image/30%.png" class="star">
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg (5).png" alt="Compétence 2">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 60%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="public/image/60%.png" class="star">
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg (1).png" alt="Compétence 3">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 50%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="public/image/50%.png" class="star">
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills">
-                <div class="skill">
-                    <img src="public/image/pngegg.png" alt="Compétence 4">
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 50%;"></div>
-                        <div class="skill-in" style="width: 100%;"></div>
-                        <img src="public/image/50%.png" class="star">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="banner">
+        <img src="../public/image/cat1.png" class="frame">
+        <img src="../public/image/cat2.png" class="frame">
+        <img src="../public/image/cat3.png" class="frame">
+        <img src="../public/image/cat4.png" class="frame">
+        <img src="../public/image/cat5.png" class="frame">
     </div>
-    <script src="public/js/navbar.js"></script>
+
+    <p id="animated-text"></p>
+
+    <div class="banner-after">
+        <img src="../public/image/cat6.png" class="frame-after">
+        <img src="../public/image/cat7.png" class="frame-after">
+        <img src="../public/image/cat8.png" class="frame-after">
+        <img src="../public/image/cat9.png" class="frame-after">
+        <img src="../public/image/cat10.png" class="frame-after">
+    </div>
+
+    <!-- Le bouton qui apparaît après le texte -->
+    <button id="enter-btn" style="display: none;">Entrée</button>
+
+    <!-- Fond blanc pour la transition -->
+    <div id="transition-overlay" style="display: none;"></div>
+
+    <script src="../public/js/index.js"></script>
 </body>
 </html>
