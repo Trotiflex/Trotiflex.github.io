@@ -1,0 +1,100 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111111;
+    padding: 15px 0;
+    
+    position: relative;
+    z-index: 2;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.border-gradient {
+    width: 75%;
+    height: 4px;
+    background: linear-gradient(to right, #49D13C 40%, #111111 60%);
+    position: absolute;
+    bottom: 0;
+}
+
+.contact-form {
+    border: 2px solid #49D13C;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+/* Titres */
+h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Champs input et textarea */
+.input-field {
+    background-color: transparent;
+    border: 2px solid #49D13C;
+    color: #00FF00;
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+/* Champ textarea spécifique */
+.textarea {
+    height: 80px;
+}
+
+/* Bouton Submit */
+.submit-btn { 
+    background-color: #49D13C;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #49D13C;
+    box-shadow: 0 0 10px #49D13C;
+}

@@ -1,0 +1,469 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111111;
+    padding: 15px 0;
+    
+    position: relative;
+    z-index: 2;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.border-gradient {
+    width: 75%;
+    height: 4px;
+    background: linear-gradient(to right, #49D13C 40%, #111111 60%);
+    position: absolute;
+    bottom: 0;
+}
+
+/* Section Hero */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 605px;
+    position: relative;
+    overflow:hidden;
+}
+
+/* Section gauche - noire */
+.left-section {
+    background-color: #111111;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-frame {
+    margin-top: -150px;
+    width: 200px;
+    height: 240px;
+    border: 2px solid #49D13C;
+    margin-bottom: 20px;
+}
+
+.profile-description {
+    text-align: center;
+    color: #49D13C;
+    font-size: 14px;
+    width: 75%;
+}
+
+/* Section droite - verte */
+.right-section {
+    background-color: #49D13C;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+
+}
+
+.hero-content {
+    text-align: left;
+    color: #111111;
+    z-index: 2;
+    margin-top: -300px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    z-index: 2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    z-index: 2;
+}
+.cat {
+    transform: translateY(50%) translateX(10%); /* Centrage parfait au niveau vertical et horizontal */
+    width: 300px;
+    height: 330px;
+}
+/* Effet dentelé avec des ellipses */
+.ellipses-container {
+    position: absolute;
+    left: 50%; /* Placer l'élément au centre de la page */
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%); /* Centrage parfait au niveau vertical et horizontal */
+    width: 50px; /* Largeur du conteneur */
+    height: 300px;
+    z-index: 1; /* Assurez-vous qu'il se place au bon niveau */
+    
+}
+.ellipse {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: #49D13C;
+    border-radius: 50%;
+    
+}
+
+
+
+
+
+
+/* Section Skills */
+.skills-section {
+    background-color: #111111 ;
+    padding: 40px 0;
+    
+}
+.skills-section h1 {
+    margin-left: 75px ;
+    margin-bottom: 20px;
+    font-size: 36px;
+    
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid #49D13C;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.skill-category {
+    flex: 1;
+    color: white;
+    text-align: center;
+    
+}
+
+.skill-category h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 100px;
+    background-color: #111111;
+    border-radius: 5px;
+    flex: 1;
+}
+.progress-bar-fill {
+    position: absolute;
+    height: 10px;
+    width: 100px;
+    background-color: #49D13C;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.skill-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-basis: 25%;
+}
+
+.skill-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.skill-name {
+    font-size: 16px;
+    color: #111111;
+}
+.Project-section {
+    background-color: #111111 ;
+    
+    
+}
+.Project-section h1 {
+    margin-left: 75px ;
+    margin-bottom: 20px;
+    font-size: 36px;
+    
+    
+}
+.project-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centre les éléments */
+    gap: 20px; /* Réduit l’espace entre les divs */
+    padding: 20px; /* Moins d’espace autour */
+    margin-left: -240px;
+}
+
+.project-item {
+    font-size: 20px;
+    width: 20%; /* Augmente la largeur pour mieux remplir l’espace */
+    height: 250px; /* Réduit la hauteur */
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre horizontalement */
+    justify-content: flex-start; /* Aligne le contenu en haut */
+    text-align: center; /* Centre le texte */
+    padding-top: 10px; /* Ajoute un petit espace en haut */
+    border-radius: 10px;
+}
+
+.project-item:nth-child(1) {
+    background-color: #D13CB6; /* Rouge */
+    color: #111111;
+}
+
+.project-item:nth-child(2) {
+    background-color: #D1983C; /* Vert */
+    color: #111111;
+}
+
+.project-item:nth-child(3) {
+    background-color: #3CAAD1; /* Bleu */
+    color: #111111;
+}
+.cursus-section {
+    padding: 50px 0;
+    position: relative;
+}
+
+.section-title {
+    margin-left: 75px ;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.timeline {
+    position: relative;
+    width: 80%;
+    height: 5px;
+    background-color: #D1983C;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: #D1983C;
+    border-radius: 50%;
+    position: absolute;
+    
+}
+
+.cursus-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.cursus-box {
+    width: 20%;
+    height: 100px;
+    border: 2px solid white;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.box1 {
+    border-color: #3CAAD1;
+}
+.box2 {
+    border-color: #D13CB6;
+    margin-left: 42%;
+    margin-bottom: 40px;
+}
+.box3 {
+    
+    margin-right: -3%;
+    border-color: #49D13C;
+}
+
+
+/* Écrans moyens (tablettes) */
+@media (max-width: 1024px) {
+    .navbar ul {
+        gap: 10px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .profile-frame {
+        margin-top: 0;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .project-item-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 80%;
+    }
+
+    .cursus-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cursus-box {
+        width: 60%;
+    }
+}
+
+/* Petits écrans (mobiles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .hero-content {
+        margin-top: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .timeline {
+        width: 90%;
+        height: 3px;
+    }
+
+    .circle {
+        width: 25px;
+        height: 25px;
+    }
+
+    .cursus-box {
+        width: 80%;
+        font-size: 14px;
+        height: 80px;
+        line-height: 80px;
+    }
+
+    .project-item {
+        width: 90%;
+        height: 200px;
+        font-size: 16px;
+    }
+}
+
+/* Très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 24px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .timeline {
+        width: 95%;
+    }
+
+    .circle {
+        width: 15px;
+        height: 15px;
+    }
+
+    .cursus-box {
+        width: 90%;
+        font-size: 12px;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .project-item {
+        width: 95%;
+        height: 180px;
+        font-size: 14px;
+    }
+}

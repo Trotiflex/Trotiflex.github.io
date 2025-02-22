@@ -1,0 +1,168 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111111;
+    padding: 15px 0;
+    
+    position: relative;
+    z-index: 2;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.border-gradient {
+    width: 75%;
+    height: 4px;
+    background: linear-gradient(to right, #49D13C 40%, #111111 60%);
+    position: absolute;
+    bottom: 0;
+}
+
+.tech-watch {
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.tech-watch h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Conteneur des boîtes */
+.box-container {
+    display: flex;
+    justify-content: center; /* Centre les boîtes horizontalement */
+    align-items: center; /* Centre les boîtes verticalement */
+    gap: 20px; /* Espace entre les boîtes */
+    margin-top: 20px; /* Ajoute un peu de marge au-dessus des boîtes */
+}
+
+/* Boîtes colorées */
+.box {
+    display: flex;
+    justify-content: center; /* Centre le texte à l'intérieur des boîtes */
+    align-items: center; /* Centre le texte verticalement dans chaque boîte */
+    width: 150px; /* Largeur de chaque boîte */
+    height: 100px; /* Hauteur de chaque boîte */
+    color: white; /* Couleur du texte */
+    font-size: 18px; /* Taille du texte */
+    font-weight: bold; /* Rend le texte plus épais */
+    border-radius: 10px; /* Coins arrondis */
+    border: 3px solid;
+}
+
+.box-orange { border-color: #D1983C; }
+.box-green  { border-color: #49D13C; }
+.box-blue   { border-color: #3CAAD1; }
+.box-purple { border-color: #D13CB6; }
+
+
+.timeline-section {
+    text-align: left;
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Conteneur des boîtes */
+.timeline-box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Styles des boîtes */
+.timeline-box {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid #D1983C;
+}
+
+.watch-box:hover {
+    transform: scale(1.1);
+}
+a {
+    display: inline-block;
+    margin-top: 12px;
+    color: white; /* Met la couleur du texte des liens en blanc */
+    text-decoration: none; /* Enlève les effets de soulignement */
+    margin-left: 10px; /* Ajoute un léger espace à gauche des liens */
+}
+
+a:hover, a:focus {
+    color: white; /* S'assure que la couleur des liens reste blanche même au survol */
+    text-decoration: none; /* Évite tout effet lors du survol */
+}
+
+.hidden {
+    display: none;
+}
+#timeline-section-orange .timeline-box { border-color: #D1983C; } /* Rouge-orangé */
+
+/* Timeline green (affiché quand on clique sur la boîte verte) */
+#timeline-section-green .timeline-box { border-color: #49D13C; } /* Vert clair */
+
+/* Timeline blue (affiché quand on clique sur la boîte bleue) */
+#timeline-section-blue .timeline-box { border-color: #3CAAD1; } /* Bleu ciel */
+
+/* Timeline purple (affiché quand on clique sur la boîte violette) */
+#timeline-section-purple .timeline-box { border-color: #D13CB6; } /* Violet clair */
+/* Responsive */
+@media (max-width: 768px) {
+    .box {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+}
