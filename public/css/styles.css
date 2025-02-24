@@ -77,6 +77,10 @@ body {
     border: 2px solid #49D13C;
     margin-bottom: 20px;
 }
+.pdp {
+    width: 196px;
+    height: 236px;  
+}
 
 .profile-description {
     text-align: center;
