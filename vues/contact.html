@@ -5,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="../public/css/contact.css">
+    <link rel="stylesheet" href="../public/css/component/navbar.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="../index.html">About me</a></li>
-            <li><a href="../vues/contact.html">Contact</a></li>
-            <li><a href="../vues/watch.html">Technology Watch</a></li>
-            
+    <nav class="navbar" id="navbar"></nav>
 
-        </ul>
-        <div class="border-gradient"></div>
-    </nav>
+    <!-- Contact Form -->
     <section class="contact-form">
-        <h2>Adresse mail :</h2>
-        <input type="email" placeholder="example@gmail.com" class="input-field">
+        <h2>Email Address:</h2>
+        <form action="mailto:boulaimarina@gmail.com" method="POST" enctype="text/plain">
+            <input type="email" name="email" placeholder="example@gmail.com" class="input-field" required>
 
-        <h2>Write a message :</h2>
-        <textarea placeholder="write a message here..." class="input-field textarea"></textarea>
+            <h2>Write a message:</h2>
+            <textarea name="message" placeholder="Write a message here..." class="input-field textarea" required></textarea>
 
-        <button class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn"><strong>Submit</strong></button>
+        </form>
     </section>
+
     <script src="../public/js/script.js"></script>
+    <script src="../public/js/component/navbar.js"></script>
 </body>
 </html>

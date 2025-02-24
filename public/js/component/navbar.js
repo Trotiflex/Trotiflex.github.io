@@ -1,13 +1,12 @@
 const navbarContent = `
-     <img src="../public/image/logo.png" alt="logo">
-        <ul>
-            <li><a href="../vues/About.html">A propos</a></li>
-            <li><a href="../vues/skills.html">compétences</a></li>
-            <li><a href="../vues/Work.html">Travaux</a></li>
-            <li><a href="../vues/book.html">Book</a></li>
-            <li><a href="../vues/vt.html">Veille Technologique</a></li>
+             <ul>
+            <li><a href="../index.html">About me</a></li>
+            <li><a href="../vues/contact.html">Contact</a></li>
+            <li><a href="../vues/watch.html">Technology Watch</a></li>
+            
 
         </ul>
+        <div class="border-gradient"></div>
 `;
 
 (() => {

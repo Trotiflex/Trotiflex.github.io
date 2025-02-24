@@ -9,58 +9,26 @@ body {
     background-color: #111111;
     font-family: Arial, sans-serif;
     color: white;
-}
-
-/* Navbar */
-.navbar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: #111111;
-    padding: 15px 0;
     
-    position: relative;
-    z-index: 2;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.border-gradient {
-    width: 75%;
-    height: 4px;
-    background: linear-gradient(to right, #49D13C 40%, #111111 60%);
-    position: absolute;
-    bottom: 0;
-}
-
+/* Contact Form */
 .contact-form {
+    margin-left: 30%;
     border: 2px solid #49D13C;
     padding: 20px;
     border-radius: 10px;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 10%;
+    width: 40%; /* Réduction de la largeur */
+    margin-top: 5%;
+    text-align: center; /* Centrage du texte */
 }
 
 /* Titres */
 h2 {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 /* Champs input et textarea */
@@ -69,7 +37,7 @@ h2 {
     border: 2px solid #49D13C;
     color: #00FF00;
     padding: 10px;
-    width: 250px;
+    width: 100%; /* Ajuste automatiquement la taille */
     font-size: 16px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -78,7 +46,8 @@ h2 {
 
 /* Champ textarea spécifique */
 .textarea {
-    height: 80px;
+    height: 100px;
+    resize: none;
 }
 
 /* Bouton Submit */
@@ -86,15 +55,28 @@ h2 {
     background-color: #49D13C;
     color: black;
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 5px;
+    margin-top: 15px; /* Met le bouton plus bas */
+    width: 100%;
 }
 
 .submit-btn:hover {
     background-color: #49D13C;
     box-shadow: 0 0 10px #49D13C;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 80%; /* Plus petit sur mobiles */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

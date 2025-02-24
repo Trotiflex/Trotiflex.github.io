@@ -5,20 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="../public/css/watch.css">
+    <link rel="stylesheet" href="../public/css/component/navbar.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="../index.html">About me</a></li>
-            <li><a href="../vues/contact.html">Contact</a></li>
-            <li><a href="../vues/watch.html">Technology Watch</a></li>
-            
-
-        </ul>
-        <div class="border-gradient"></div>
-    </nav>
+    <nav class="navbar" id="navbar"></nav>
+    
 
     <section class="tech-watch">
         <h1>Technology watch</h1>
@@ -43,7 +36,7 @@
         </div>
         <h2>November 2023</h2>
         <div class="timeline-box-container">
-            <div class="timeline-box"><a href="https://www.lemondeinformatique.fr/actualites/lire-atempo-place-en-redressement-judiciaire-92108.html  " target="_blank">AAtempo placed under judicial reorganization</a></div>
+            <div class="timeline-box"><a href="https://www.lemondeinformatique.fr/actualites/lire-atempo-place-en-redressement-judiciaire-92108.html  " target="_blank">Atempo placed under judicial reorganization</a></div>
             <div class="timeline-box"><a href="https://www.lemondeinformatique.fr/actualites/lire-un-bug-dans-google-drive-supprime-certains-fichiers-92255.html" target="_blank">A bug in Google Drive deletes some files</a></div>
         </div>
         <h2>December 2023</h2>
@@ -633,6 +626,7 @@
     </div>
 </section>
     <script src="../public/js/script.js"></script>
+    <script src="../public/js/component/navbar.js"></script>
     <script>
         function toggleTimeline(sectionId) {
             // Cache toutes les timelines

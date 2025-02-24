@@ -5,20 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/component/navbar.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="../index.html">About me</a></li>
-            <li><a href="../vues/contact.html">Contact</a></li>
-            <li><a href="../vues/watch.html">Technology Watch</a></li>
-            
-
-        </ul>
-        <div class="border-gradient"></div>
-    </nav>
+    <nav class="navbar" id="navbar"></nav>
 
     <!-- Section Hero -->
     <div class="ellipses-container">
@@ -71,7 +63,7 @@
             <div class="profile-frame">
                 <img src="../public/image/me.jpg" alt="pdp" class="pdp">
             </div>
-            <p class="profile-description">Je suis passionné par le développement fullstack et j'aime apprendre de nouvelles technologies.</p>
+            <p class="profile-description">To talk a little about myself, I really enjoy drawing (both digital and traditional), and I have a passion for wildlife and nature. I got into programming because it helps me unleash my creativity.</p>
         </div>
 
         <div class="right-section">
@@ -114,6 +106,7 @@
                     <p class="skill-name">JavaScript</p>
                 </div>
             </div>
+            <img src="../public/image/green_cat_1.png" alt="cat_2" class="cat_2">
         </div>
         
         <!-- Backend -->
@@ -171,20 +164,24 @@
     </div>
 </section>
 <section class="Project-section">
-    <h1>Projects</h1>
-    <div class="project-item-container">
-    <div class="project-item">
-            <p class="project-name"><strong>GSB</strong></p>
-    </div>
-    <div class="project-item">
-        <p class="project-name"><strong>ADLP</strong></p>
-    </div>
-    <div class="project-item">
-        <p class="project-name"><strong>Intranet</strong></p>
-    </div>
-    </div>
-   
-</section>
+    <section class="Project-section">
+        <h1>Projects</h1>
+        <div class="project-item-container">
+            <a href="../vues/project1.html" class="project-item">
+                <img src="../public/image/Book/" alt="Aperçu du projet" class="project-hover-img">
+                <p class="project-name"><strong>Book</strong></p>
+            </a>
+            <a href="../vues/project2.html" class="project-item">
+                <img src="../public/image/ADLP/Logo.png" alt="Aperçu du projet" class="project-hover-img">
+                <p class="project-name"><strong>ADLP</strong></p>
+            </a>
+            <a href="../vues/project3.html" class="project-item">
+                <img src="../public/image/Intranet/Intranet.png" alt="Aperçu du projet" class="project-hover-img">
+                <p class="project-name"><strong>Intranet</strong></p>
+            </a>
+        </div>
+    </section>
+    
 <section class="cursus-section">
     <h1 class="section-title">Cursus</h1>
     
@@ -204,5 +201,6 @@
 </section>
 
     <script src="../public/js/script.js"></script>
+    <script src="../public/js/component/navbar.js"></script>
 </body>
 </html>

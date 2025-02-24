@@ -11,42 +11,7 @@ body {
     color: white;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #111111;
-    padding: 15px 0;
-    
-    position: relative;
-    z-index: 2;
-}
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.border-gradient {
-    width: 75%;
-    height: 4px;
-    background: linear-gradient(to right, #49D13C 40%, #111111 60%);
-    position: absolute;
-    bottom: 0;
-}
 
 /* Section Hero */
 .hero-section {
@@ -80,6 +45,11 @@ body {
 .pdp {
     width: 196px;
     height: 236px;  
+}
+.cat_2 {
+    transform: translateY(-50px) translateX(-10%); /* Centrage parfait au niveau vertical et horizontal */
+    width: 300px;
+    height: 330px;  
 }
 
 .profile-description {
@@ -166,6 +136,7 @@ body {
     justify-content: space-between;
     gap: 40px;
     max-width: 1200px;
+    height:500px;
     margin: 0 auto;
     border: 2px solid #49D13C;
     padding: 20px;
@@ -258,7 +229,30 @@ body {
     text-align: center; /* Centre le texte */
     padding-top: 10px; /* Ajoute un petit espace en haut */
     border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+    
 }
+.project-hover-img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.project-item:hover .project-hover-img {
+    opacity: 1;
+    visibility: visible;
+}
+.project-item:hover {
+    transform: translateY(-10px);
+
+}
+
 
 .project-item:nth-child(1) {
     background-color: #D13CB6; /* Rouge */

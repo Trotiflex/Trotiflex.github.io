@@ -1,0 +1,136 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+/* Carousel */
+.carousel-container {
+    margin-left: 12%;
+    margin-top: 50px;
+    margin-bottom: 3%;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: #282828;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+  }
+  
+  .carousel-text {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    bottom: 60px;
+    z-index: 5;
+    width: 100%;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .carousel-item {
+    width: 50%;
+    height: 75%;
+    background-size: cover;
+    max-height: 500px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.5s, opacity 0.5s;
+ 
+  }
+  
+  .carousel-item.left {
+    transform: translateX(-80%) scale(0.8);
+    opacity: 0.6;
+  }
+  
+  .carousel-item.center {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 10;
+  }
+  
+  .carousel-item.right {
+    transform: translateX(80%) scale(0.8);
+    opacity: 0.6;
+  }
+
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #111111;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel-dots .dot.active {
+    background-color: #49D13C;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .carousel-container {
+      width: 90%;
+      height: 350px;
+    }
+  
+    .carousel-item {
+      width: 50%;
+    }
+  
+    .carousel-item.left {
+      transform: translateX(-100%) scale(0.7);
+    }
+  
+    .carousel-item.right {
+      transform: translateX(100%) scale(0.7);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-container {
+      height: 250px;
+    }
+  
+    .carousel-item {
+      width: 60%;
+    }
+  
+    .carousel-item.left,
+    .carousel-item.right {
+      transform: translateX(-80%) scale(0.6);
+    }
+  }

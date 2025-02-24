@@ -11,43 +11,6 @@ body {
     color: white;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #111111;
-    padding: 15px 0;
-    
-    position: relative;
-    z-index: 2;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.border-gradient {
-    width: 75%;
-    height: 4px;
-    background: linear-gradient(to right, #49D13C 40%, #111111 60%);
-    position: absolute;
-    bottom: 0;
-}
-
 .tech-watch {
     text-align: center;
     padding: 50px 20px;
@@ -81,6 +44,7 @@ body {
     font-weight: bold; /* Rend le texte plus épais */
     border-radius: 10px; /* Coins arrondis */
     border: 3px solid;
+    cursor: pointer;
 }
 
 .box-orange { border-color: #D1983C; }
