@@ -283,6 +283,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1; /* Timeline derrière les boxes */
 }
 
 .circle {
@@ -291,6 +292,7 @@ body {
     background-color: #D1983C;
     border-radius: 50%;
     position: absolute;
+    z-index: 3; /* Cercles au-dessus de tout */
 }
 
 /* Positionnement des cercles sur la timeline horizontale */
@@ -316,6 +318,7 @@ body {
     width: 80%;
     margin: 50px auto 0;
     position: relative;
+    z-index: 2; /* Boxes au-dessus de la timeline */
 }
 
 /* Style de base pour les cursus boxes */
@@ -331,6 +334,9 @@ body {
     font-size: 15px;
     border-radius: 10px;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    position: relative;
+    z-index: 2; /* Assure que les boxes sont au-dessus de la timeline */
+    background-color: #111111; /* Ajoute un fond pour masquer la timeline derrière */
 }
 
 .box1 {
@@ -433,68 +439,77 @@ body {
         text-align: center;
     }
 
-    /* Timeline verticale pour tablette */
-    .timeline {
-        width: 5px;
-        height: 500px;
-        margin: 0 auto;
-        flex-direction: column;
+        /* Timeline verticale pour tablette et mobile */
+        .timeline {
+            width: 5px;
+            height: 100%; /* Changé à 100% pour couvrir toute la hauteur */
+            margin: 0;
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            top: 0; /* Assurez-vous que la timeline commence tout en haut */
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    
+        /* Positionnement des cercles sur la timeline verticale */
+        .circle {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        .circle:nth-child(1) {
+            top: 0; /* Le premier cercle est maintenant au sommet */
+        }
+    
+        .circle:nth-child(2) {
+            top: 50%;
+        }
+    
+        .circle:nth-child(3) {
+            bottom: 0; /* Le dernier cercle est maintenant au bas */
+            top: auto; /* Réinitialise top si défini précédemment */
+        }
+    
+        /* Conteneur des cursus boxes */
+        .cursus-items {
+            flex-direction: column;
+            align-items: flex-start; /* Aligne les éléments à gauche */
+            justify-content: space-between; /* Répartit l'espace verticalement */
+            gap: 0; /* Supprime l'espace entre les éléments */
+            margin: 0;
+            padding: 40px 0; /* Ajoute un peu d'espace en haut et en bas */
+            height: 500px;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+        }
+    
+        /* Ajustement des cursus boxes */
+        .cursus-box {
+            width: 45%; /* Réduit légèrement la largeur */
+            max-width: 300px;
+            margin: 0 0 0 calc(50% + 20px); /* Positionne à droite de la timeline */
+            position: relative;
+            z-index: 2;
+        }
+    
+        /* Positionnement spécifique pour chaque box */
+        .box1 {
+            align-self: flex-start;
+        }
+    
+        .box2 {
+            align-self: flex-start;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    
+        .box3 {
+            align-self: flex-start;
+            margin-top: auto; /* Pousse la boîte vers le bas */
+        }
     }
-
-    /* Positionnement des cercles sur la timeline verticale */
-    .circle:nth-child(1) {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .circle:nth-child(2) {
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .circle:nth-child(3) {
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* Conteneur des cursus boxes en colonne */
-    .cursus-items {
-        flex-direction: column;
-        align-items: center;
-        gap: 100px;
-        margin-top: 0;
-        height: 500px;
-    }
-
-    /* Ajustement des cursus boxes */
-    .cursus-box {
-        width: 80%;
-        max-width: 300px;
-        margin: 0;
-        position: relative;
-    }
-
-    /* Positionnement spécifique pour chaque box */
-    .box1 {
-        align-self: flex-start;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-
-    .box2 {
-        align-self: flex-end;
-        margin-right: 20px;
-    }
-
-    .box3 {
-        align-self: flex-start;
-        margin-left: 20px;
-        margin-bottom: 20px;
-    }
-}
 
 /* Petits écrans (mobiles) */
 @media (max-width: 768px) {
@@ -547,30 +562,22 @@ body {
 
     /* Conteneur des cursus boxes */
     .cursus-items {
-        width: 90%;
+        width: 100%;
         height: 400px;
         gap: 80px;
     }
 
     /* Ajustement des cursus boxes */
     .cursus-box {
-        width: 90%;
+        width: 70%;
         max-width: 250px;
         height: 80px;
         font-size: 14px;
     }
 
-    /* Positionnement spécifique pour chaque box */
-    .box1 {
-        margin-left: 10px;
-    }
-
-    .box2 {
-        margin-right: 10px;
-    }
-
-    .box3 {
-        margin-left: 10px;
+    /* Positionnement spécifique pour chaque box - toutes à droite de la timeline */
+    .box1, .box2, .box3 {
+        margin-left: calc(50% + 15px); /* Positionne toutes les boxes à droite de la timeline */
     }
 
     .project-item {
@@ -594,34 +601,24 @@ body {
     /* Conteneur des cursus boxes */
     .cursus-items {
         height: 350px;
-        gap: 60px;
     }
 
-    /* Ajustement des cercles */
     .circle {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 
-    /* Ajustement des cursus boxes */
     .cursus-box {
-        width: 85%;
+        width: 65%;
         max-width: 200px;
         height: 70px;
         font-size: 12px;
+        margin-left: calc(50% + 10px);
     }
 
-    /* Positionnement spécifique pour chaque box */
-    .box1 {
-        margin-left: 5px;
-    }
-
-    .box2 {
-        margin-right: 5px;
-    }
-
-    .box3 {
-        margin-left: 5px;
+    /* Positionnement spécifique pour chaque box - toutes à droite de la timeline */
+    .box1, .box2, .box3 {
+        margin-left: calc(50% + 10px); /* Positionne toutes les boxes à droite de la timeline */
     }
 
     .project-item {
