@@ -211,6 +211,7 @@ body {
 }
 
 .project-item {
+    background-color: transparent;
     font-size: 20px;
     width: 20%;
     height: 250px;
@@ -223,6 +224,9 @@ body {
     border-radius: 10px;
     position: relative;
     transition: transform 0.3s ease;
+    color: aliceblue;
+    text-decoration: none;
+    border: 2px solid #49D13C;
 }
 
 .project-hover-img {
@@ -243,23 +247,13 @@ body {
 }
 
 .project-item:hover {
-    transform: translateY(-10px);
+    width:22%;
+    height:255px;
+    transition: 200ms ease;
+
 }
 
-.project-item:nth-child(1) {
-    background-color: #D13CB6;
-    color: #111111;
-}
 
-.project-item:nth-child(2) {
-    background-color: #D1983C;
-    color: #111111;
-}
-
-.project-item:nth-child(3) {
-    background-color: #3CAAD1;
-    color: #111111;
-}
 
 /* Cursus Section - Version Desktop */
 .cursus-section {
