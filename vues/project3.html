@@ -15,8 +15,10 @@
     <section class="first-page">
         <div class="text-container">
 
+            <!-- Introduction -->
             <h1>La cinématique inversée pour robot hexapode</h1>
 
+            <!-- Bloc 1 : Définition des valeurs h et exp -->
             <div class="kinematic-block">
                 <img src="../public/image/Intranet/schema1ck.png" class="kinematik1" alt="Schéma 1">
                 <div>
@@ -27,6 +29,7 @@
                 </div>
             </div>
 
+            <!-- Bloc 2 : Calcul de la valeur inconnue avec Pythagore -->
             <div class="kinematic-block">
                 <div class="formula-block">
                     <p>hyp = √(h² + exp²)</p>
@@ -38,18 +41,29 @@
 
             <p class="center-text">Résolution de la valeur inconnue grâce à Pythagore</p>
 
+            <!-- Bloc 3 : Explication des angles des servo-moteurs -->
             <div class="kinematic-block">
                 <img src="../public/image/Intranet/schema3ck.png" class="kinematik3" alt="Schéma 3">
                 <p>Une fois que nous avons trouvé la valeur, nous pouvons chercher les angles des servo-moteurs.</p>
             </div>
 
+            <!-- Section : Les angles et servo-moteurs -->
             <h1>Les angles et servo-moteurs</h1>
 
+            <!-- Bloc 4 : Explication des limites des servo-moteurs -->
             <div class="kinematic-block">
                 <p>Les servo-moteurs sont limités à un axe de 180°.</p>
                 <img src="../public/image/Intranet/schema5ck.png" class="kinematik5" alt="Schéma 5">
-                <p>L'angle tracé en rouge fait 180°, donc les angles que peut atteindre le servo-moteur. Nous allons nous en servir pour récupérer les angles recherchés.</p>
             </div>
+
+            <div class="kinematic-block">
+                <p>L'angle tracé en rouge fait 180°, donc les angles que peut atteindre le servo-moteur. Nous allons nous en servir pour récupérer les angles recherchés.</p>
+                <img src="../public/image/Intranet/schema6ck.png" class="kinematik6" alt="Schéma 6">
+            </div>
+
+            <!-- Section : Le Théorème d'Al Kashi -->
+            <h2>Le Théorème d'Al Kashi</h2>
+            <p>Le Théorème d'Al Kashi permet de calculer un angle grâce à la longueur de chaque segment du triangle.</p>
 
         </div>
     </section>
