@@ -11,21 +11,48 @@
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar"></nav>
-    <div class="carousel-container">
-        <div class="carousel">
-          <img src="../../public/images/sousmarin/plongeur.jpg" alt="Image 1" class="carousel-item left">
-          <img src="../../public/images/sousmarin/poisson.jpg" alt="Image 2" class="carousel-item center">
-          <img src="../../public/images/sousmarin/sousmarin.jpg" alt="Image 3" class="carousel-item right">
-          <img src="../../public/images/sousmarin/vestiges.jpg" alt="Image 3" class="carousel-item back"> 
+
+    <section class="first-page">
+        <div class="text-container">
+
+            <h1>La cinématique inversée pour robot hexapode</h1>
+
+            <div class="kinematic-block">
+                <img src="../public/image/Intranet/schema1ck.png" class="kinematik1" alt="Schéma 1">
+                <div>
+                    <p><strong>h :</strong> La distance entre le corps du robot et le sol</p>
+                    <p>h = 8 cm</p>
+                    <p><strong>exp :</strong> Distance, expansion de la patte</p>
+                    <p>exp = 12 cm</p>
+                </div>
+            </div>
+
+            <div class="kinematic-block">
+                <div class="formula-block">
+                    <p>hyp = √(h² + exp²)</p>
+                    <p>hyp = √(8² + 12²)</p>
+                    <p>hyp ≈ 14.42 cm</p>
+                </div>
+                <img src="../public/image/Intranet/schema2ck.png" class="kinematik2" alt="Schéma 2">
+            </div>
+
+            <p class="center-text">Résolution de la valeur inconnue grâce à Pythagore</p>
+
+            <div class="kinematic-block">
+                <img src="../public/image/Intranet/schema3ck.png" class="kinematik3" alt="Schéma 3">
+                <p>Une fois que nous avons trouvé la valeur, nous pouvons chercher les angles des servo-moteurs.</p>
+            </div>
+
+            <h1>Les angles et servo-moteurs</h1>
+
+            <div class="kinematic-block">
+                <p>Les servo-moteurs sont limités à un axe de 180°.</p>
+                <img src="../public/image/Intranet/schema5ck.png" class="kinematik5" alt="Schéma 5">
+                <p>L'angle tracé en rouge fait 180°, donc les angles que peut atteindre le servo-moteur. Nous allons nous en servir pour récupérer les angles recherchés.</p>
+            </div>
+
         </div>
-        <p class="carousel-text">U117, sous-marin au large de Pen mané, Groix</p>
-        <div class="carousel-dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-        </div>
-      </div>
+    </section>
 
     <script src="../public/js/project.js"></script>
     <script src="../public/js/component/navbar.js"></script>

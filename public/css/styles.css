@@ -208,6 +208,7 @@ body {
     gap: 20px;
     padding: 20px;
     margin-left: -240px;
+    overflow: hidden;
 }
 
 .project-item {
@@ -239,18 +240,23 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow: hidden;
+    
 }
 
 .project-item:hover .project-hover-img {
     opacity: 1;
     visibility: visible;
+    overflow: hidden;
+   
 }
 
 .project-item:hover {
     width:22%;
     height:255px;
     transition: 200ms ease;
-
+    overflow: hidden;
+    
 }
 
 
