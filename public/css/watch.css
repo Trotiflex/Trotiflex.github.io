@@ -130,3 +130,53 @@ a:hover, a:focus {
         height: 100px;
     }
 }
+
+
+.container {
+    align-self: center;
+    width: 90vw;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #252525;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+.title {
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.date {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    color: #ccc;
+}
+.content {
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    width: 100%;
+    position: relative;
+    
+    bottom: -20px;
+}
+@media (max-width: 600px) {
+    .container {
+        width: 95vw;
+        padding: 15px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .content {
+        font-size: 14px;
+    }
+}
