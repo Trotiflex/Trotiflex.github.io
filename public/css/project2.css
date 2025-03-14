@@ -37,6 +37,22 @@ body {
   width: 100%;
   padding: 20px 20px 20px 20px;
 }
+.intranet-text {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  
+  z-index: 5;
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+}
+.intranet-img{
+  margin-top: 20px;
+  margin-left: 300px;
+  height: 400px;
+  width: 650px;
+}
 
 .carousel {
   display: flex;
