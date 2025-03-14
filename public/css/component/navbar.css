@@ -42,7 +42,7 @@
     position: absolute;
     top: 15px;
     right: 20px;
-    z-index: 3;
+    z-index: 4; /* Assure qu'il est au-dessus de tout */
 }
 
 /* Navbar mobile cachée par défaut */
@@ -58,6 +58,7 @@
     align-items: center;
     padding-top: 60px;
     transition: right 0.3s ease-in-out;
+    z-index: 5; /* Plus grand que l'overlay */
 }
 
 /* Correction pour afficher les liens dans le menu mobile */
@@ -74,6 +75,12 @@
     padding: 15px;
 }
 
+.navbar-mobile ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
 /* Overlay pour fermer le menu */
 .overlay {
     display: none;
@@ -83,7 +90,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 3;
 }
 
 /* Affichage mobile */
