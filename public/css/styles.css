@@ -357,9 +357,6 @@ body {
         display: none;
     }
     
-    .navbar ul {
-        gap: 10px;
-    }
 
     .hero-section {
         flex-direction: column;
@@ -390,15 +387,6 @@ body {
         transform: translateY(50px);
     }
 
-    .project-item-container {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 0;
-    }
-
-    .project-item {
-        width: 80%;
-    }
 
     .cat {
         transform: translateY(-5px);
@@ -406,16 +394,7 @@ body {
         width: 150px;
     }
     
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .navbar ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
 
     .hero-content {
         margin-top: 0;
@@ -525,16 +504,7 @@ body {
         width: 150px;
     }
     
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .navbar ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
 
     .hero-content {
         margin-top: 0;
@@ -560,11 +530,7 @@ body {
         margin-right: 15px; /* Ajustement de la marge */
     }
 
-    .project-item {
-        width: 90%;
-        height: 200px;
-        font-size: 16px;
-    }
+
 }
 
 /* Très petits écrans (moins de 480px) */
@@ -590,9 +556,103 @@ body {
         margin-right: 10px; /* Ajustement de la marge */
     }
 
-    .project-item {
-        width: 95%;
-        height: 180px;
-        font-size: 14px;
+}
+/* Responsive pour les tablettes et écrans plus petits (1024px) */
+@media (max-width: 1024px) {
+    .project-item-container {
+        flex-direction: column; /* Passe en mode colonne sur les écrans plus petits */
+        align-items: center;
+        margin-left: 0;
+        gap: 20px; /* Espacement entre les items */
     }
+    .project-hover-img {   
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            overflow: hidden;
+    }
+    .project-item {
+        width: 80%; /* Réduit la largeur des projets pour un meilleur affichage */
+        height: auto; /* Ajuste la hauteur automatiquement pour garder une bonne proportion */
+        font-size: 16px; /* Réduit la taille de la police pour les petits écrans */
+        margin-bottom: 20px; /* Ajoute un espacement entre les projets */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .project-item:hover {
+        width: 85%; /* Augmente la taille légèrement au survol */
+        height: auto;
+    }
+}
+
+/* Petits écrans (mobiles) */
+@media (max-width: 768px) {
+    .project-item-container {
+        flex-direction: column; /* Affichage en colonne */
+        align-items: center;
+        padding: 0 20px; /* Ajoute des marges internes */
+    }
+
+    .project-item {
+        width: 90%; /* Réduit encore plus la largeur des éléments */
+        height: 180px; /* Ajuste la hauteur des éléments pour un meilleur espacement */
+        font-size: 14px; /* Réduit la taille du texte */
+        margin-bottom: 15px; /* Réduit l'espacement entre les éléments */
+    }
+
+    .project-item:hover {
+        width: 95%; /* Augmente légèrement la largeur au survol */
+        height: 190px;
+    }
+
+    .project-hover-img {
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        height: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        overflow: hidden;
+    }
+}
+
+/* Très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .project-item-container {
+        flex-direction: column; /* Toujours en colonne pour les très petits écrans */
+        align-items: center;
+        padding: 0 15px; /* Réduit un peu les marges internes */
+    }
+
+    .project-item {
+        width: 95%; /* Occupation maximale de la largeur */
+        height: 160px; /* Hauteur plus petite pour s'adapter aux écrans très petits */
+        font-size: 12px; /* Réduit encore la taille de la police */
+        margin-bottom: 10px; /* Espacement réduit entre les éléments */
+    }
+ .project-hover-img {
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow: hidden; 
+    }
+
+    .project-item:hover {
+        width: 100%; /* Expansion totale lors du survol */
+        height: 170px; /* Ajuste légèrement la hauteur */
+    }
+
+
 }
