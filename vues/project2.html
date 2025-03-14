@@ -11,42 +11,55 @@
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar"></nav>
-    <br />
-    <p class="first-text">During my first-year internship in BTS SIO, I had to redesign the website of my school. that was just one page because this is an link page.</p>
-   <div class="intranet">
-    <img src="../public/image/Intranet/Intranet.png" alt="Image 1" class="intranet-img">
-   </div>
 
+    <main>
+        <section class="project">
+            <p class="first-text">
+                During my first-year internship in BTS SIO, I had to redesign the website of my school. 
+                That was just one page because this is a link page.
+            </p>
+            <div class="intranet">
+                <img src="../public/image/Intranet/Intranet.png" alt="Screenshot of the redesigned school website" class="intranet-img">
+            </div>
+        </section>
 
-    <p class="carousel-text">During my second-year internship in BTS SIO, I had to redesign the website of a diving association. Here is the result (some pages are not displayed to maintain a minimum level of security).</p>
-    <br />
-    <br />
-    <div class="carousel-container">
-        <div class="carousel">
-          <img src="../public/image/ADLP/index.png" alt="Image 1" class="carousel-item left">
-          <img src="../public/image/ADLP/index2.png" alt="Image 2" class="carousel-item center">
-          <img src="../public/image/ADLP/index3.png" alt="Image 3" class="carousel-item right">
-          <img src="../public/image/ADLP/log.png" alt="Image 4" class="carousel-item back"> 
-          <img src="../public/image/ADLP/diapo.png" alt="Image 5" class="carousel-item back">
-          <img src="../public/image/ADLP/calendar.png" alt="Image 6" class="carousel-item back">
-          <img src="../public/image/ADLP/contact.png" alt="Image 7" class="carousel-item back">
-          <img src="../public/image/ADLP/creation.png" alt="Image 8" class="carousel-item back">
-        </div>
-        
-        <div class="carousel-dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-            <span class="dot" data-index="4"></span>
-            <span class="dot" data-index="5"></span>
-            <span class="dot" data-index="6"></span>
-            <span class="dot" data-index="7"></span>
-            <span class="dot" data-index="8"></span>
-        </div>
-      </div>
+        <section class="project">
+            <p class="carousel-text">
+                During my second-year internship in BTS SIO, I had to redesign the website of a diving association. 
+                Here is the result (some pages are not displayed to maintain a minimum level of security).
+            </p>
 
-    <script src="../public/js/project.js"></script>
-    <script src="../public/js/component/navbar.js"></script>
+            <!-- Carrousel -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="../public/image/ADLP/index.png" alt="Homepage of the diving association website" class="carousel-item left">
+                    <img src="../public/image/ADLP/index2.png" alt="Another page of the website" class="carousel-item center">
+                    <img src="../public/image/ADLP/index3.png" alt="Website showcase" class="carousel-item right">
+                    <img src="../public/image/ADLP/log.png" alt="Website login page" class="carousel-item back">
+                    <img src="../public/image/ADLP/diapo.png" alt="Slideshow of the website" class="carousel-item back">
+                    <img src="../public/image/ADLP/calendar.png" alt="Website calendar page" class="carousel-item back">
+                    <img src="../public/image/ADLP/contact.png" alt="Contact page of the website" class="carousel-item back">
+                    <img src="../public/image/ADLP/creation.png" alt="Website creation page" class="carousel-item back">
+                </div>
+
+                <!-- Dots for navigation -->
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                    <span class="dot" data-index="5"></span>
+                    <span class="dot" data-index="6"></span>
+                    <span class="dot" data-index="7"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts JS -->
+    <script src="../public/js/project.js" ></script>
+    <script src="../public/js/component/navbar.js" ></script>
+
 </body>
 </html>

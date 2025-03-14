@@ -40,4 +40,16 @@ const navbarContent = `
         navbarMobile.style.right = "-250px";
         overlay.style.display = "none";
     });
+
 })();
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navbar a");
+    const currentURL = window.location.href; // Récupère l'URL complète de la page
+
+    navLinks.forEach(link => {
+        // Compare l'URL complète du lien avec celle de la page actuelle
+        if (link.href === currentURL) {
+            link.classList.add("active"); // Ajoute la classe "active"
+        }
+    });
+});
