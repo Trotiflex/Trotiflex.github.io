@@ -129,7 +129,8 @@ body {
     justify-content: space-between;
     gap: 40px;
     max-width: 1200px;
-    height: 500px;
+    height: auto;
+    min-height: 500px;
     margin: 0 auto;
     border: 2px solid #49D13C;
     padding: 20px;
@@ -191,8 +192,10 @@ body {
     color: #111111;
 }
 
+/* Section Projets */
 .Project-section {
     background-color: #111111;
+    padding: 40px 0;
 }
 
 .Project-section h1 {
@@ -203,63 +206,60 @@ body {
 
 .project-item-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
-    margin-left: -240px;
-    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-item {
-    background-color: transparent;
+    background-color: #111111;
     font-size: 20px;
-    width: 20%;
-    height: 250px;
+    width: 280px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: center;
-    padding-top: 10px;
+    padding: 20px;
     border-radius: 10px;
     position: relative;
-    transition: transform 0.3s ease;
-    color: aliceblue;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
     text-decoration: none;
     border: 2px solid #49D13C;
-}
-
-.project-hover-img {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    height: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
     overflow: hidden;
-    
-}
-
-.project-item:hover .project-hover-img {
-    opacity: 1;
-    visibility: visible;
-    overflow: hidden;
-   
 }
 
 .project-item:hover {
-    width:22%;
-    height:255px;
-    transition: 200ms ease;
-    overflow: hidden;
-    
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(73, 209, 60, 0.3);
 }
 
+.project-hover-img {
+    width: 75%;
+    height: auto;
+    max-height: 65%;
+    object-fit: cover;
+    margin: 15px 0;
+    border-radius: 5px;
+    opacity: 1;
+    visibility: visible;
+}
 
+.project-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #49D13C;
+}
+
+.project-description {
+    font-size: 14px;
+    margin-top: auto;
+}
 
 /* Cursus Section - Version Desktop */
 .cursus-section {
@@ -283,7 +283,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1; /* Timeline derrière les boxes */
+    z-index: 1;
 }
 
 .circle {
@@ -292,7 +292,7 @@ body {
     background-color: #D1983C;
     border-radius: 50%;
     position: absolute;
-    z-index: 3; /* Cercles au-dessus de tout */
+    z-index: 3;
 }
 
 /* Positionnement des cercles sur la timeline horizontale */
@@ -318,7 +318,7 @@ body {
     width: 80%;
     margin: 50px auto 0;
     position: relative;
-    z-index: 2; /* Boxes au-dessus de la timeline */
+    z-index: 2;
 }
 
 /* Style de base pour les cursus boxes */
@@ -335,8 +335,8 @@ body {
     border-radius: 10px;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     position: relative;
-    z-index: 2; /* Assure que les boxes sont au-dessus de la timeline */
-    background-color: #111111; /* Ajoute un fond pour masquer la timeline derrière */
+    z-index: 2;
+    background-color: #111111;
 }
 
 .box1 {
@@ -351,308 +351,397 @@ body {
     border-color: #49D13C;
 }
 
-/* Écrans moyens (tablettes) et petits écrans (mobiles) */
+/* Écrans larges et moyens */
+@media (max-width: 1200px) {
+    .skills-container {
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .project-item-container {
+        padding: 15px;
+    }
+    
+    .project-item {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+/* Écrans moyens (tablettes) */
 @media (max-width: 1024px) {
     .ellipse {
         display: none;
     }
     
-
     .hero-section {
         flex-direction: column;
         height: auto;
-        text-align: center;
-        padding: 50px 20px;
+        padding: 40px 0;
     }
-
+    
     .left-section, .right-section {
         width: 100%;
-        padding: 20px;
+        padding: 30px;
     }
-
+    
     .profile-frame {
         margin-top: 0;
-    }
-
-    .skills-container {
-        flex-direction: column;
-        height: auto;
-        gap: 20px;
-        padding: 20px;
     }
     
     .cat_2 {
         width: 200px;
         height: 200px;
-        transform: translateY(50px);
-    }
-
-
-    .cat {
-        transform: translateY(-5px);
-        height: 150px;
-        width: 150px;
+        transform: translateY(0);
     }
     
-
-
+    .cat {
+        transform: translateY(0);
+        height: 180px;
+        width: 180px;
+        margin: 20px 0;
+    }
+    
     .hero-content {
         margin-top: 0;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    /* Cursus Section - Version Tablette et Mobile */
-    .cursus-section {
-        padding: 30px 0;
-        height: 600px; /* Hauteur fixe pour contenir tous les éléments */
-        position: relative;
-    }
-
-    .section-title {
-        margin-left: 0;
         text-align: center;
     }
-
-    /* Timeline verticale pour tablette et mobile */
-    .timeline {
-        width: 5px;
-        height: 80%; /* Ajusté pour ne pas toucher les bords */
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        top: 20%; /* Commence à 10% du haut */
-        transform: translateX(-50%);
-        z-index: 1;
-    }
-
-    /* Positionnement des cercles sur la timeline verticale */
-    .circle {
-        left: 52%;
-        transform: translateX(-50%);
-    }
-
-    .circle:nth-child(1) {
-        top: 0;
-    }
-
-    .circle:nth-child(2) {
-        top: 50%;
-    }
-
-    .circle:nth-child(3) {
-        bottom: 0;
-        top: auto;
-        left:-38px;
-    }
-
-    /* Conteneur des cursus boxes */
-    .cursus-items {
+    
+    .skills-container {
         flex-direction: column;
-        align-items: flex-end; /* Aligne les éléments à droite */
-        justify-content: space-between;
-        gap: 0;
-        margin: 0;
-        padding: 10% 0; /* Espace en haut et en bas */
-        height: 100%;
-        width: 100%;
-        z-index: 2;
+        height: auto;
     }
-
-    /* Ajustement des cursus boxes */
-    .cursus-box {
-        width: 45%;
-        max-width: 300px;
-        margin: 0 5% 0 0; /* Marge à droite */
-        position: relative;
-        z-index: 2;
+    
+    .skills-section h1,
+    .Project-section h1,
+    .section-title {
+        margin-left: 30px;
+        font-size: 30px;
     }
-
-    /* Positionnement spécifique pour chaque box */
-    .box1, .box2, .box3 {
-        margin-left: 10px;
-        align-self: flex-start;
-        padding: 15px;
+    
+    
+    /* Projets section - Version Tablette */
+    .project-item-container {
+        justify-content: center;
+        gap: 20px;
     }
-    .box1{
-     margin-top: -80px;
-    }
-    .box2{
-        margin-top: 20px;
-    }
-    .box3{
-        margin-bottom: -50px;
-
+    
+    .project-item {
+        width: 280px;
+        height: 320px;
     }
 }
 
 /* Petits écrans (mobiles) */
 @media (max-width: 768px) {
-    .ellipse {
-        display: none;
+    .hero-section {
+        padding: 20px 0;
     }
     
-    .cat {
-        transform: translateY(-5px);
-        height: 150px;
-        width: 150px;
-    }
-    
-
-
-    .hero-content {
-        margin-top: 0;
-    }
-
     .hero-content h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
-
+    
     .hero-content p {
         font-size: 16px;
     }
-
-    .cursus-section {
-        height: 500px; /* Hauteur réduite pour les mobiles */
+    
+    .profile-frame {
+        width: 160px;
+        height: 200px;
     }
-
-    .cursus-box {
-        width: 70%;
-        max-width: 250px;
-        height: 80px;
+    
+    .pdp {
+        width: 156px;
+        height: 196px;
+    }
+    
+    .cat, .cat_2 {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .skills-section h1,
+    .Project-section h1,
+    .section-title {
+        margin-left: 20px;
+        font-size: 24px;
+        text-align: left;
+    }
+    
+    .skill-item {
+        padding: 8px;
+    }
+    
+    .skill-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .skill-name {
         font-size: 14px;
-        margin-right: 15px; /* Ajustement de la marge */
     }
-
-
+    
+    .project-item {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+        min-height: 300px;
+    }
+    
+    .project-hover-img {
+        max-height: 150px;
+    }
 }
 
 /* Très petits écrans (moins de 480px) */
 @media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 22px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+    }
+    
+    .profile-frame {
+        width: 140px;
+        height: 180px;
+    }
+    
+    .pdp {
+        width: 136px;
+        height: 176px;
+    }
+    
+    .cat, .cat_2 {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .skills-section h1,
+    .Project-section h1,
     .section-title {
-        font-size: 24px;
+        margin-left: 15px;
+        font-size: 22px;
     }
-
+    
+    
+    .project-item {
+        width: 95%;
+        min-height: 280px;
+    }
+    
+    .project-title {
+        font-size: 18px;
+    }
+    
+    .project-description {
+        font-size: 12px;
+    }
+    
+    .project-hover-img {
+        max-height: 140px;
+    }
+}
+@media (max-width: 768px) {
     .cursus-section {
-        height: 450px; /* Hauteur encore réduite */
+        padding: 30px 0;
+        height: auto;
+        min-height: 450px;
+        overflow: hidden;
     }
+    
+    .section-title {
+        margin-left: 20px;
+        font-size: 24px;
+        text-align: left;
+    }
+}
+    
+ /* Écrans moyens (tablettes) */
+@media (max-width: 1024px) {
+    .cursus-section {
+        padding: 30px 0;
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .section-title {
+        margin-left: 30px;
+        font-size: 30px;
+    }
+    
+    .timeline {
+        width: 5px;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 80px;
+        transform: translateX(-50%);
+    }
+    
+    .circle {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .circle:nth-child(1) {
+        top: 0;
+    }
+    
+    .circle:nth-child(2) {
+        top: 50%;
+    }
+    
+    .circle:nth-child(3) {
+        top: 100%;
+        left: 50%;
+    }
+    
+    .cursus-items {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 100px;
+        gap: 120px;
+        padding-bottom: 50px;
+    }
+    
+    .cursus-box {
+        width: 60%;
+        max-width: 300px;
+    }
+}
 
+/* Petits écrans (mobiles) - Configuration avec boxes alignées aux cercles */
+@media (max-width: 768px) {
+    .cursus-section {
+        padding: 30px 0;
+        height: auto;
+        min-height: 500px;
+        overflow: visible;
+        position: relative;
+    }
+    
+    .section-title {
+        margin-left: 20px;
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    
+    /* Timeline verticale à droite */
+    .timeline {
+        width: 5px;
+        height: 400px;
+        position: absolute;
+        right: 25%;
+        top: 120px;
+        left: auto;
+        transform: none;
+    }
+    
+    /* Positionnement des cercles sur la timeline verticale */
+    .circle {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+    }
+    
+    .circle:nth-child(1) {
+        top: 0px;
+        margin-left: 2px;
+    }
+    
+    .circle:nth-child(2) {
+        top: 170px;
+    }
+    
+    .circle:nth-child(3) {
+        top: 370px;
+        margin-left: -30px;
+    }
+    
+    /* Conteneur des cursus boxes */
+    .cursus-items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+        margin: 0;
+        padding: 50px 0 50px 20px;
+        gap: 0;
+        position: relative;
+    }
+    
+    .cursus-box {
+        width: 100%;
+        max-width: 250px;
+        height: 80px;
+        font-size: 14px;
+        position: absolute;
+        left: 0;
+    }
+    
+    /* Positionnement spécifique pour chaque box alignée avec les cercles */
+    .box1 {
+        top: 20px;
+        margin-left: 10px;
+    }
+    
+    .box2 {
+        top: 190px;
+        margin-left: 10px;
+    }
+    
+    .box3 {
+        top: 380px;
+        margin-left: 10px;
+    }
+}
+
+/* Très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .cursus-section {
+        min-height: 450px;
+    }
+    
+    .section-title {
+        margin-left: 15px;
+        font-size: 22px;
+    }
+    
     .circle {
         width: 25px;
         height: 25px;
     }
-
+    
+    .timeline {
+        right: 15%;
+        height: 360px;
+    }
+    
+    .cursus-items {
+        width: 80%;
+        padding-left: 10px;
+    }
+    
     .cursus-box {
-        width: 65%;
-        max-width: 200px;
+        width: 70%;
         height: 70px;
         font-size: 12px;
-        margin-right: 10px; /* Ajustement de la marge */
     }
-
-}
-/* Responsive pour les tablettes et écrans plus petits (1024px) */
-@media (max-width: 1024px) {
-    .project-item-container {
-        flex-direction: column; /* Passe en mode colonne sur les écrans plus petits */
-        align-items: center;
-        margin-left: 0;
-        gap: 20px; /* Espacement entre les items */
+    
+    .box1 {
+        top: 25px;
     }
-    .project-hover-img {   
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            height: auto;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            overflow: hidden;
+    
+    .box2 {
+        top: 175px;
     }
-    .project-item {
-        width: 80%; /* Réduit la largeur des projets pour un meilleur affichage */
-        height: auto; /* Ajuste la hauteur automatiquement pour garder une bonne proportion */
-        font-size: 16px; /* Réduit la taille de la police pour les petits écrans */
-        margin-bottom: 20px; /* Ajoute un espacement entre les projets */
-        transition: all 0.3s ease-in-out;
+    
+    .box3 {
+        top: 325px;
     }
-
-    .project-item:hover {
-        width: 85%; /* Augmente la taille légèrement au survol */
-        height: auto;
-    }
-}
-
-/* Petits écrans (mobiles) */
-@media (max-width: 768px) {
-    .project-item-container {
-        flex-direction: column; /* Affichage en colonne */
-        align-items: center;
-        padding: 0 20px; /* Ajoute des marges internes */
-    }
-
-    .project-item {
-        width: 90%; /* Réduit encore plus la largeur des éléments */
-        height: 180px; /* Ajuste la hauteur des éléments pour un meilleur espacement */
-        font-size: 14px; /* Réduit la taille du texte */
-        margin-bottom: 15px; /* Réduit l'espacement entre les éléments */
-    }
-
-    .project-item:hover {
-        width: 95%; /* Augmente légèrement la largeur au survol */
-        height: 190px;
-    }
-
-    .project-hover-img {
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 40%;
-        height: auto;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-        overflow: hidden;
-    }
-}
-
-/* Très petits écrans (moins de 480px) */
-@media (max-width: 480px) {
-    .project-item-container {
-        flex-direction: column; /* Toujours en colonne pour les très petits écrans */
-        align-items: center;
-        padding: 0 15px; /* Réduit un peu les marges internes */
-    }
-
-    .project-item {
-        width: 95%; /* Occupation maximale de la largeur */
-        height: 160px; /* Hauteur plus petite pour s'adapter aux écrans très petits */
-        font-size: 12px; /* Réduit encore la taille de la police */
-        margin-bottom: 10px; /* Espacement réduit entre les éléments */
-    }
- .project-hover-img {
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40%;
-    height: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    overflow: hidden; 
-    }
-
-    .project-item:hover {
-        width: 100%; /* Expansion totale lors du survol */
-        height: 170px; /* Ajuste légèrement la hauteur */
-    }
-
-
 }
