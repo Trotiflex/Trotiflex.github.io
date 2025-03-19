@@ -123,3 +123,11 @@
         display: flex !important; /* Réaffiche le menu principal */
     }
 }
+.github-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: -50px;
+    transform: translateY(10px);
+    
+}
+

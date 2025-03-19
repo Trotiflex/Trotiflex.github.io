@@ -7,7 +7,11 @@ const navbarContent = `
         <li><a href="../index.html">About me</a></li>
         <li><a href="../vues/watch.html">Technology Watch</a></li>
         <li><a href="../vues/Documents.html">Documents</a></li>
-        <li><a href="../vues/contact.html">Contact</a></li>
+        <li>
+            <a href="https://github.com/Trotiflex" target="_blank">
+                <img src="../public/image/github.png" alt="GitHub" class="github-icon" />
+            </a>
+        </li>
     </ul>
 
     <div class="navbar-mobile" id="navbar-mobile">
@@ -15,9 +19,12 @@ const navbarContent = `
             <li><a href="../index.html">About me</a></li>
             <li><a href="../vues/watch.html">Technology Watch</a></li>
             <li><a href="../vues/Documents.html">Documents</a></li>
-            <li><a href="../vues/contact.html">Contact</a></li>
+            <li>
+                <a href="https://github.com/Trotiflex" target="_blank">
+                    <img src="../public/image/github.png" alt="GitHub" class="github-icon" />
+                </a>
+            </li>
         </ul>
-        <div class="border-gradient"></div>
     </div>
 `;
 
@@ -42,14 +49,14 @@ const navbarContent = `
     });
 
 })();
+
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".navbar a");
-    const currentURL = window.location.href; // Récupère l'URL complète de la page
+    const currentURL = window.location.href;
 
     navLinks.forEach(link => {
-        // Compare l'URL complète du lien avec celle de la page actuelle
         if (link.href === currentURL) {
-            link.classList.add("active"); // Ajoute la classe "active"
+            link.classList.add("active");
         }
     });
 });
