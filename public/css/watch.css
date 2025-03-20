@@ -183,7 +183,7 @@ a:hover, a:focus {
     }
 }
 
-/* 📲 Petits téléphones (max 480px) */
+/*  Petits téléphones (max 480px) */
 @media (max-width: 480px) {
     .tech-watch h1 {
         font-size: 24px;
@@ -208,7 +208,7 @@ a:hover, a:focus {
     }
 }
 
-/* 🏆 Super petits écrans (max 360px) */
+/* Super petits écrans (max 360px) */
 @media (max-width: 360px) {
     .box {
         width: 120px;
