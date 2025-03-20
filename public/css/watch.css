@@ -27,11 +27,12 @@ body {
 .box-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap; /* Permet aux boîtes de passer à la ligne */
     gap: 20px;
-    flex-wrap: wrap; /* Permet aux boîtes de passer à la ligne si nécessaire */
-    margin-top: 20px;
+    max-width: 380px; /* Limite la largeur pour forcer 2 boîtes par ligne */
+    margin: 20px auto; /* Centre le conteneur */
 }
+
 .date{
     align-self: center;
     color: #b3b3b3;
@@ -41,7 +42,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 160px;
+    width: calc(50% - 10px); /* Prend 50% de la largeur moins la moitié du gap */
+    min-width: 140px; /* Largeur minimale pour éviter des boîtes trop petites */
     height: 120px;
     color: white;
     font-size: 18px;
@@ -49,20 +51,46 @@ body {
     border-radius: 10px;
     border: 3px solid;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background-color: transparent;
 }
 
 .box:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Couleurs des boîtes */
-.box-orange { border-color: #D1983C; }
-.box-green  { border-color: #49D13C; }
-.box-blue   { border-color: #3CAAD1; }
-.box-purple { border-color: #D13CB6; }
+.box-orange { 
+    border-color: #D1983C; 
+}
+.box-orange.active {
+    background-color: #D1983C;
+    color:#111111;
+}
 
+.box-green { 
+    border-color: #49D13C; 
+}
+.box-green.active {
+    background-color: #49D13C;
+    color:#111111;
+}
+
+.box-blue { 
+    border-color: #3CAAD1; 
+}
+.box-blue.active {
+    background-color: #3CAAD1;
+    color:#111111;
+}
+
+.box-purple { 
+    border-color: #D13CB6; 
+}
+.box-purple.active {
+    background-color: #D13CB6;
+    color:#111111;
+}
 /* Section Timeline */
 .timeline-section {
     text-align: left;
@@ -143,7 +171,7 @@ a:hover, a:focus {
 /* 📱 Mobiles moyens (max 768px) */
 @media (max-width: 768px) {
     .box-container {
-        flex-direction: column;
+        flex-wrap: wrap; 
     }
     .box {
         width: 160px;

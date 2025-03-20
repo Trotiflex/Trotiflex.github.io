@@ -2213,6 +2213,23 @@
         document.querySelectorAll(".timeline-box").forEach(box => {
             box.addEventListener("click", toggleArticle);
         });
+        document.addEventListener('DOMContentLoaded', function() {
+    const boxes = document.querySelectorAll('.box');
+    
+    boxes.forEach(box => {
+        box.addEventListener('click', function() {
+            // Désactive toutes les autres boxes
+            boxes.forEach(otherBox => {
+                if (otherBox !== this) {
+                    otherBox.classList.remove('active');
+                }
+            });
+            
+            // Active/désactive la box actuelle
+            this.classList.toggle('active');
+        });
+    });
+});
     
     </script>
     
