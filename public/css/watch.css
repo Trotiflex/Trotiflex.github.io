@@ -147,7 +147,15 @@ a:hover, a:focus {
 #timeline-section-blue .timeline-box { border-color: #3CAAD1; }
 #timeline-section-purple .timeline-box { border-color: #D13CB6; }
 
-
+footer {
+    padding: 10px;
+    background-color: #222222;
+    color: white;
+    position:relative;
+    bottom: 0;
+    margin-top: 111px;
+    width: 100%;
+  }
 
 /* 📏 Petits écrans (tablettes & petits laptops) */
 @media (max-width: 1024px) {

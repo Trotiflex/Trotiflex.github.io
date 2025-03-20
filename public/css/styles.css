@@ -197,7 +197,7 @@ body {
 /* Section Projets */
 .Project-section {
     background-color: #111111;
-    padding: 40px 0;
+    
 }
 
 .Project-section h1 {
@@ -597,7 +597,7 @@ body {
         min-height: 450px;
         overflow: hidden;
     }
-    
+
     
     .section-title {
         margin-left: 20px;
@@ -796,4 +796,14 @@ body {
         top: 310px;
         margin-left: -25px;
     }
+}
+footer {
+  padding: 10px;
+  background-color: #222222;
+  color: white;
+  position:relative;
+  bottom: 0;
+  margin-top: 50px;
+
+  width: 100%;
 }
