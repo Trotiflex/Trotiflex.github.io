@@ -129,7 +129,7 @@ body {
     justify-content: space-between;
     gap: 40px;
     max-width: 1200px;
-    height: auto;
+    height: 500px;
     min-height: 500px;
     margin: 0 auto;
     border: 2px solid #49D13C;

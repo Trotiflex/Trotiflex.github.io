@@ -38,6 +38,20 @@ h1::after {
   height: 3px;
   background-color: #49D13C;
 }
+h1:nth-of-type(1)::after {
+  background-color: #D1983C;
+}
+
+/* Deuxième h1::after - bleu */
+h1:nth-of-type(2)::after {
+  background-color: #D13CB6;
+}
+
+/* Troisième h1::after - orange */
+h1:nth-of-type(3)::after {
+  background-color: #49D13C;
+}
+
 
 /* Style pour la section principale */
 section {
@@ -86,6 +100,21 @@ iframe {
   height: 500px;
   display: block;
   background-color: #fff;
+}
+
+
+.iframe-container:nth-of-type(1) h3 {
+  border-bottom: 3px solid #D1983C; /* Vert */
+}
+
+/* Deuxième rapport */
+.iframe-container:nth-of-type(2) h3 {
+  border-bottom: 3px solid #D1983C; /* Bleu */
+}
+
+/* CV */
+section:nth-of-type(2) .iframe-container h3 {
+  border-bottom: 3px solid #D13CB6; /* Rouge */
 }
 
 /* Style pour le bouton de téléchargement */
