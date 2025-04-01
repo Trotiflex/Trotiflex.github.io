@@ -1,27 +1,26 @@
-// Fonction pour vérifier si l'élément est dans le viewport
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+document.addEventListener("DOMContentLoaded", function () {
+    const elementsToAnimate = document.querySelectorAll(
+        ".profile-frame, .cat_2, .profile-description, .cat, .skills-section, .skill-item, .project-item, .cursus-section, .cursus-box"
     );
-}
 
-// Fonction pour ajouter la classe "visible" aux éléments qui entrent dans le viewport
-function checkVisibility() {
-    const projectItems = document.querySelectorAll('.project-item');
-
-    projectItems.forEach(item => {
-        if (isElementInViewport(item)) {
-            item.classList.add('visible');
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.animationPlayState = "running";
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.3, // Déclenche lorsque 20% de l'élément est visible
         }
+    );
+
+    elementsToAnimate.forEach((element) => {
+        element.style.opacity = "0"; // Masque les éléments au départ
+        element.style.animationPlayState = "paused"; // Empêche l'animation avant le scroll
+        observer.observe(element);
     });
-}
-
-// Écouter l'événement de défilement pour déclencher la vérification de la visibilité
-window.addEventListener('scroll', checkVisibility);
-
-// Vérifiez la visibilité au chargement de la page aussi
-document.addEventListener('DOMContentLoaded', checkVisibility);
+});
