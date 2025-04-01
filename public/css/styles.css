@@ -17,6 +17,8 @@ body {
     will-change: transform, opacity;
     backface-visibility: hidden;
     transform: translateZ(0);
+    /* Hide all animated elements by default */
+    visibility: hidden;
 }
 
 /* Optimized animations */
@@ -24,10 +26,12 @@ body {
     from {
         opacity: 0;
         transform: translate3d(0, 20px, 0);
+        visibility: visible; /* Make visible at animation start */
     }
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
+        visibility: visible;
     }
 }
 
@@ -35,25 +39,31 @@ body {
     from {
         opacity: 0;
         transform: translate3d(-100%, 0, 0) scale3d(0.8, 0.8, 1);
+        visibility: visible; /* Make visible at animation start */
     }
     60% {
         opacity: 1;
         transform: translate3d(10px, 0, 0) scale3d(1.05, 1.05, 1);
+        visibility: visible;
     }
     to {
         transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        visibility: visible;
     }
 }
 
 @keyframes pulse {
     from {
         transform: scale3d(1, 1, 1);
+        visibility: visible; /* Make visible at animation start */
     }
     50% {
         transform: scale3d(1.1, 1.1, 1);
+        visibility: visible;
     }
     to {
         transform: scale3d(1, 1, 1);
+        visibility: visible;
     }
 }
 
@@ -172,6 +182,7 @@ body {
     z-index: 0;
     animation: pulse 2s infinite ease-in-out;
     transform: translateZ(0);
+    visibility: hidden; /* Hide until animation starts */
 }
 
 /* Section Skills */
@@ -203,6 +214,7 @@ body {
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
     transform: translateZ(0);
+    visibility: hidden; /* Hide until animation starts */
 }
 
 .skill-category {
@@ -383,6 +395,7 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    animation: fadeInUp 0s ease-out 0s forwards;
     justify-content: space-between;
     z-index: 1;
 }
@@ -399,9 +412,9 @@ body {
     transform: translateZ(0);
 }
 
-.circle:nth-child(1) { left: 0; transform: translate3d(-50%, 0, 0); animation-delay: 0.5s; }
-.circle:nth-child(2) { left: 50%; transform: translate3d(-50%, 0, 0); animation-delay: 0.5s; }
-.circle:nth-child(3) { right: 0; transform: translate3d(50%, 0, 0); animation-delay: 0.5s; }
+.circle:nth-child(1) { left: 0; transform: translate3d(-50%, 0, 0);  }
+.circle:nth-child(2) { left: 50%; transform: translate3d(-50%, 0, 0);  }
+.circle:nth-child(3) { right: 0; transform: translate3d(50%, 0, 0);  }
 
 .cursus-items {
     display: flex;
@@ -525,32 +538,37 @@ body {
         font-size: 30px;
     }
     
-    /* Cursus section - Tablette */
+    /* Timeline verticale à droite */
     .timeline {
         width: 5px;
-        height: 400px;
+        height: 450px;
         position: absolute;
-        left: 50%;
-        top: 80px;
-        transform: translate3d(-50%, 0, 0);
+        right: 25%;
+        top: 225px;
+        left: auto;
+        transform: none;
     }
     
+    /* Positionnement des cercles sur la timeline verticale */
     .circle {
         left: 50%;
         transform: translate3d(-50%, 0, 0);
+        width: 30px;
+        height: 30px;
     }
-    
     .circle:nth-child(1) {
-        top: 0;
+        top: 0px;
+        margin-left: -13px;
     }
     
     .circle:nth-child(2) {
-        top: 50%;
+        top: 215px;
+        margin-left: -15px;
     }
     
     .circle:nth-child(3) {
-        top: 100%;
-        left: 50%;
+        top: 435px;
+        margin-left: -15px;
     }
     
     .cursus-items {
@@ -677,20 +695,26 @@ body {
         width: 30px;
         height: 30px;
     }
-    
     .circle:nth-child(1) {
         top: 0px;
-        margin-left: 2px;
+        margin-left: -13px;
     }
     
     .circle:nth-child(2) {
-        top: 170px;
+        top: 180px;
+        margin-left: -15px;
     }
     
     .circle:nth-child(3) {
-        top: 370px;
-        margin-left: -30px;
+        top: 380px;
+        margin-left: -15px;
     }
+    .progress-bar-fill {
+        top: 15px;
+        left: 8px;
+    }
+
+
     
     /* Conteneur des cursus boxes */
     .cursus-items {
@@ -792,7 +816,25 @@ body {
         width: 25px;
         height: 25px;
     }
+    .circle:nth-child(1) {
+        top: 0px;
+        margin-left: -10px;
+    }
     
+    .circle:nth-child(2) {
+        top: 155px;
+        margin-left: -12px;
+    }
+    
+    .circle:nth-child(3) {
+        top: 320px;
+        margin-left: -12px;
+    }
+    .progress-bar-fill {
+        top: 15px;
+        left: 8px;
+    }
+
     .timeline {
         right: 15%;
         height: 330px;
@@ -821,10 +863,7 @@ body {
         top: 325px;
     }
     
-    .circle:nth-child(3) {
-        top: 310px;
-        margin-left: -25px;
-    }
+
 }
 
 footer {
@@ -836,13 +875,4 @@ footer {
     margin-top: 50px;
     width: 100%;
     transform: translateZ(0);
-}
-
-/* Cleaned up duplicate/conflicting animations */
-.skills-section {
-    animation: fadeInUp 1s ease-out 0.3s forwards;
-}
-
-.skills-container {
-    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
