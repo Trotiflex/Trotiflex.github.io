@@ -12,44 +12,48 @@ body {
     overflow-x: hidden;
 }
 
+/* Performance optimizations for animations */
 .profile-frame, .cat_2, .profile-description, .cat, .skill-item, .circle, .project-item, .cursus-box {
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
-/* Nouvelles animations */
+
+/* Optimized animations */
 @keyframes fadeInUp {
-    0% {
+    from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translate3d(0, 20px, 0);
     }
-    100% {
+    to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
 @keyframes bounceIn {
-    0% {
+    from {
         opacity: 0;
-        transform: translateX(-100%) scale(0.8);
+        transform: translate3d(-100%, 0, 0) scale3d(0.8, 0.8, 1);
     }
     60% {
         opacity: 1;
-        transform: translateX(10px) scale(1.05);
+        transform: translate3d(10px, 0, 0) scale3d(1.05, 1.05, 1);
     }
-    100% {
-        transform: translateX(0) scale(1);
+    to {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     }
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
+    from {
+        transform: scale3d(1, 1, 1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale3d(1.1, 1.1, 1);
     }
-    100% {
-        transform: scale(1);
+    to {
+        transform: scale3d(1, 1, 1);
     }
 }
 
@@ -61,8 +65,6 @@ body {
     height: 531px;
     position: relative;
     overflow: hidden;
-    opacity:1;
-
 }
 
 .left-section {
@@ -75,6 +77,7 @@ body {
     justify-content: center;
     padding: 20px;
     order: 1;
+    transform: translateZ(0);
 }
 
 .profile-frame {
@@ -83,8 +86,8 @@ body {
     height: 240px;
     border: 2px solid #49D13C;
     margin-bottom: 20px;
-    animation: fadeInUp 1s ease-out 0.5s forwards;
     opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .pdp {
@@ -93,12 +96,13 @@ body {
 }
 
 .cat_2 {
-    transform: translateY(-40px) translateX(-50%);
+    transform: translate3d(-50%, -40px, 0);
     width: 300px;
     height: 330px;
-    animation: fadeInUp 1s ease-out 0.7s forwards,  pulse 2s infinite ease-in-out;;
-    
     opacity: 0;
+    animation: 
+        fadeInUp 1s ease-out 0.7s forwards,
+        pulse 2s infinite ease-in-out 1.7s;
 }
 
 .profile-description {
@@ -106,8 +110,8 @@ body {
     color: #49D13C;
     font-size: 14px;
     width: 75%;
-    animation: fadeInUp 1s ease-out 0.9s forwards;
     opacity: 0;
+    animation: fadeInUp 1s ease-out 0.9s forwards;
 }
 
 .right-section {
@@ -119,6 +123,8 @@ body {
     justify-content: center;
     padding: 20px;
     order: 2;
+    z-index: 1;
+    transform: translateZ(0);
 }
 
 .hero-content {
@@ -126,38 +132,32 @@ body {
     color: #111111;
     z-index: 2;
     margin-top: -300px;
-   
-    opacity: 1;
 }
 
 .hero-content h1 {
     font-size: 40px;
-    z-index:4 ;
-    
+
 }
 
 .hero-content p {
     font-size: 18px;
-    z-index: 4;
-   
+
 }
 
 .cat {
-    transform: translateY(50%) translateX(10%);
+    transform: translate3d(10%, 50%, 0);
     width: 300px;
     height: 330px;
-    animation: fadeInUp 1s ease-out 0.6s forwards;
     opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
 }
-
-
 
 /* Effet dentelé avec des ellipses */
 .ellipses-container {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    transform: translate3d(-50%, -50%, 0);
     width: 50px;
     height: 300px;
     z-index: 1;
@@ -169,8 +169,9 @@ body {
     height: 40px;
     background-color: #49D13C;
     border-radius: 50%;
+    z-index: 0;
     animation: pulse 2s infinite ease-in-out;
-    z-index : -1;
+    transform: translateZ(0);
 }
 
 /* Section Skills */
@@ -179,13 +180,13 @@ body {
     padding: 40px 0;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.3s forwards;
+    transform: translateZ(0);
 }
 
 .skills-section h1 {
     margin-left: 75px;
     margin-bottom: 20px;
     font-size: 36px;
-    
 }
 
 .skills-container {
@@ -199,6 +200,9 @@ body {
     border: 2px solid #49D13C;
     padding: 20px;
     border-radius: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    transform: translateZ(0);
 }
 
 .skill-category {
@@ -230,15 +234,16 @@ body {
     background-color: #111111;
     border-radius: 5px;
     flex: 1;
+    position: relative;
 }
 
 .progress-bar-fill {
-    position: absolute;
     height: 10px;
-    width: 100px;
     background-color: #49D13C;
     border-radius: 5px;
-    flex: 1;
+    position: absolute;
+    top: 20px;
+    left: 10px;
 }
 
 .skill-info {
@@ -258,6 +263,7 @@ body {
     color: #fff;
 }
 
+/* Staggered animations with proper delay */
 .skill-item:nth-child(1) { animation-delay: 0.5s; }
 .skill-item:nth-child(2) { animation-delay: 0.6s; }
 .skill-item:nth-child(3) { animation-delay: 0.7s; }
@@ -273,6 +279,7 @@ body {
     background-color: #111111;
     width: 100%;
     height: auto;
+    transform: translateZ(0);
 }
 
 .Project-section h1 {
@@ -324,7 +331,7 @@ body {
 }
 
 .project-item:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translate3d(0, -5px, 0) scale3d(1.02, 1.02, 1);
     box-shadow: 0 10px 20px rgba(73, 209, 60, 0.3);
 }
 
@@ -339,7 +346,7 @@ body {
 }
 
 .project-item:hover .project-hover-img {
-    transform: scale(1.05);
+    transform: scale3d(1.05, 1.05, 1);
 }
 
 .project-title {
@@ -359,6 +366,7 @@ body {
     position: relative;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.3s forwards;
+    transform: translateZ(0);
 }
 
 .section-title {
@@ -388,11 +396,12 @@ body {
     z-index: 3;
     opacity: 1;
     animation: pulse 1.5s infinite ease-in-out;
+    transform: translateZ(0);
 }
 
-.circle:nth-child(1) { left: 0; transform: translateX(-50%); animation-delay: 0.5s; }
-.circle:nth-child(2) { left: 50%; transform: translateX(-50%); animation-delay: 0.5s; }
-.circle:nth-child(3) { right: 0; transform: translateX(50%); animation-delay: 0.5s; }
+.circle:nth-child(1) { left: 0; transform: translate3d(-50%, 0, 0); animation-delay: 0.5s; }
+.circle:nth-child(2) { left: 50%; transform: translate3d(-50%, 0, 0); animation-delay: 0.5s; }
+.circle:nth-child(3) { right: 0; transform: translate3d(50%, 0, 0); animation-delay: 0.5s; }
 
 .cursus-items {
     display: flex;
@@ -422,19 +431,20 @@ body {
 .cursus-box.box1 { border-color: #3CAAD1; animation-delay: 0.6s; }
 .cursus-box.box2 { border-color: #D13CB6; animation-delay: 0.8s; }
 .cursus-box.box3 { border-color: #49D13C; animation-delay: 1.0s; }
-/* Écrans larges et moyens */
+
+/* Media Queries */
 @media (max-width: 1200px) {
     .left-section {
-      order: 2;
+        order: 2;
     }
-    .right-section{
+    .right-section {
         margin-top: 15px;
         order: 1;
         text-align: left;
-}
-.right-section p {
-    text-align: left;
-}
+    }
+    .right-section p {
+        text-align: left;
+    }
     .skills-container {
         padding: 15px;
         gap: 20px;
@@ -466,17 +476,20 @@ body {
         width: 100%;
         padding: 30px;
     }
+    
     .left-section {
         order: 2;
-      }
-      .right-section{
-          margin-top: 15px;
-          order: 1;
-          text-align: left;
-  }
-  .right-section p {
-      text-align: left;
-  }
+    }
+    
+    .right-section {
+        margin-top: 15px;
+        order: 1;
+        text-align: left;
+    }
+    
+    .right-section p {
+        text-align: left;
+    }
     
     .profile-frame {
         margin-top: 0;
@@ -485,11 +498,11 @@ body {
     .cat_2 {
         width: 200px;
         height: 200px;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
     
     .cat {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
         height: 180px;
         width: 180px;
         margin: 20px 0;
@@ -512,16 +525,46 @@ body {
         font-size: 30px;
     }
     
-    
-    /* Projets section - Version Tablette */
-    .project-item-container {
-        justify-content: center;
-        gap: 20px;
+    /* Cursus section - Tablette */
+    .timeline {
+        width: 5px;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 80px;
+        transform: translate3d(-50%, 0, 0);
     }
     
-    .project-item {
-        width: 280px;
-        height: 320px;
+    .circle {
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+    }
+    
+    .circle:nth-child(1) {
+        top: 0;
+    }
+    
+    .circle:nth-child(2) {
+        top: 50%;
+    }
+    
+    .circle:nth-child(3) {
+        top: 100%;
+        left: 50%;
+    }
+    
+    .cursus-items {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 100px;
+        gap: 120px;
+        padding-bottom: 50px;
+    }
+    
+    .cursus-box {
+        width: 60%;
+        max-width: 300px;
     }
 }
 
@@ -530,17 +573,20 @@ body {
     .hero-section {
         padding: 20px 0;
     }
+    
     .left-section {
         order: 2;
-      }
-      .right-section{
-          margin-top: 15px;
-          order: 1;
-          text-align: left;
-  }
-  .right-section p {
-      text-align: left;
-  }
+    }
+    
+    .right-section {
+        margin-top: 15px;
+        order: 1;
+        text-align: left;
+    }
+    
+    .right-section p {
+        text-align: left;
+    }
     
     .hero-content h1 {
         font-size: 26px;
@@ -596,142 +642,8 @@ body {
     .project-hover-img {
         max-height: 150px;
     }
-}
-
-/* Très petits écrans (moins de 480px) */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 22px;
-    }
-    .left-section {
-        order: 2;
-      }
-      .right-section{
-          margin-top: 15px;
-          order: 1;
-          text-align: left;
-  }
-  .right-section p {
-      text-align: left;
-  }
     
-    .hero-content p {
-        font-size: 14px;
-    }
-    
-    .profile-frame {
-        width: 140px;
-        height: 180px;
-    }
-    
-    .pdp {
-        width: 136px;
-        height: 176px;
-    }
-    
-    .cat, .cat_2 {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .skills-section h1,
-    .Project-section h1,
-    .section-title {
-        margin-left: 15px;
-        font-size: 22px;
-    }
-    
-    
-    .project-item {
-        width: 95%;
-        min-height: 280px;
-    }
-    
-    .project-title {
-        font-size: 18px;
-    }
-    
-    .project-description {
-        font-size: 12px;
-    }
-    
-    .project-hover-img {
-        max-height: 140px;
-    }
-}
-@media (max-width: 768px) {
-    .cursus-section {
-        padding: 30px 0;
-        height: auto;
-        min-height: 450px;
-        overflow: hidden;
-    }
-
-    
-    .section-title {
-        margin-left: 20px;
-        font-size: 24px;
-        text-align: left;
-    }
-}
-    
- /* Écrans moyens (tablettes) */
-@media (max-width: 1024px) {
-    .cursus-section {
-        padding: 30px 0;
-        height: auto;
-        min-height: 500px;
-    }
-    
-    .section-title {
-        margin-left: 30px;
-        font-size: 30px;
-    }
-    
-    .timeline {
-        width: 5px;
-        height: 400px;
-        position: absolute;
-        left: 50%;
-        top: 80px;
-        transform: translateX(-50%);
-    }
-    
-    .circle {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .circle:nth-child(1) {
-        top: 0;
-    }
-    
-    .circle:nth-child(2) {
-        top: 50%;
-    }
-    
-    .circle:nth-child(3) {
-        top: 100%;
-        left: 50%;
-    }
-    
-    .cursus-items {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 100px;
-        gap: 120px;
-        padding-bottom: 50px;
-    }
-    
-    .cursus-box {
-        width: 60%;
-        max-width: 300px;
-    }
-}
-
-/* Petits écrans (mobiles) - Configuration avec boxes alignées aux cercles */
-@media (max-width: 768px) {
+    /* Timeline mobile */
     .cursus-section {
         padding: 30px 0;
         height: auto;
@@ -761,7 +673,7 @@ body {
     /* Positionnement des cercles sur la timeline verticale */
     .circle {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
         width: 30px;
         height: 30px;
     }
@@ -819,6 +731,54 @@ body {
 
 /* Très petits écrans (moins de 480px) */
 @media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 22px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+    }
+    
+    .profile-frame {
+        width: 140px;
+        height: 180px;
+    }
+    
+    .pdp {
+        width: 136px;
+        height: 176px;
+    }
+    
+    .cat, .cat_2 {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .skills-section h1,
+    .Project-section h1,
+    .section-title {
+        margin-left: 15px;
+        font-size: 22px;
+    }
+    
+    .project-item {
+        width: 95%;
+        min-height: 280px;
+    }
+    
+    .project-title {
+        font-size: 18px;
+    }
+    
+    .project-description {
+        font-size: 12px;
+    }
+    
+    .project-hover-img {
+        max-height: 140px;
+    }
+    
+    /* Timeline small mobile */
     .cursus-section {
         min-height: 450px;
     }
@@ -859,148 +819,30 @@ body {
     
     .box3 {
         top: 325px;
-        
     }
+    
     .circle:nth-child(3) {
         top: 310px;
         margin-left: -25px;
     }
 }
+
 footer {
-  padding: 10px;
-  background-color: #222222;
-  color: white;
-  position:relative;
-  bottom: 0;
-  margin-top: 50px;
-
-  width: 100%;
-}
-/* Animation pour les éléments qui apparaissent en fondu (fade-in) */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    padding: 10px;
+    background-color: #222222;
+    color: white;
+    position: relative;
+    bottom: 0;
+    margin-top: 50px;
+    width: 100%;
+    transform: translateZ(0);
 }
 
-/* Animation pour les éléments qui apparaissent en glissant depuis la gauche */
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+/* Cleaned up duplicate/conflicting animations */
+.skills-section {
+    animation: fadeInUp 1s ease-out 0.3s forwards;
 }
 
-/* Boîte des compétences (Apparaît en fade-in) */
 .skills-container {
-    opacity: 0;
-    animation: fadeIn 1.5s ease-out forwards;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
-
-/* Skills (Apparaître depuis la gauche) */
-.skill-item {
-    opacity: 0;
-    animation: slideInLeft 1s ease-out forwards;
-}
-
-/* Délai pour chaque skill */
-.skill-item:nth-child(1) {
-    animation-delay: 0.5s;
-}
-
-.skill-item:nth-child(2) {
-    animation-delay: 0.7s;
-}
-
-.skill-item:nth-child(3) {
-    animation-delay: 0.9s;
-}
-
-.skill-item:nth-child(4) {
-    animation-delay: 0.11s;
-}
-
-.skill-item:nth-child(5) {
-    animation-delay: 0.13s;
-}
-
-.skill-item:nth-child(6) {
-    animation-delay: 0.15s;
-}
-
-.skill-item:nth-child(7) {
-    animation-delay: 0.17s;
-}
-
-.skill-item:nth-child(8) {
-    animation-delay: 0.19s;
-}
-
-.skill-item:nth-child(9) {
-    animation-delay: 0.21s;
-}
-
-/* Section Skills (Apparaître en fade-in après un délai) */
-
-/* Animation pour les éléments qui apparaissent en glissant depuis la gauche */
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-
-
-.skill-item:nth-child(1) {
-    animation-delay: 0.5s;
-}
-
-.skill-item:nth-child(2) {
-    animation-delay: 0.7s;
-}
-
-.skill-item:nth-child(3) {
-    animation-delay: 0.9s;
-}
-
-.skill-item:nth-child(4) {
-    animation-delay: 1.1s;
-}
-
-.skill-item:nth-child(5) {
-    animation-delay: 1.3s;
-}
-
-.skill-item:nth-child(6) {
-    animation-delay: 1.5s;
-}
-
-.skill-item:nth-child(7) {
-    animation-delay: 1.7s;
-}
-
-.skill-item:nth-child(8) {
-    animation-delay: 1.9s;
-}
-
-.skill-item:nth-child(9) {
-    animation-delay: 2.1s;
-}
-
-
-
-
-
-

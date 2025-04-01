@@ -60,3 +60,17 @@ footer {
   bottom: 0;
   width: 100%;
 }
+.banner {
+  width: 100%;
+  height: 40vh; /* Ajuste la hauteur selon tes besoins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* Optionnel : fond si l'image ne remplit pas tout */
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover; /* Garde l'image entière sans la couper */
+}

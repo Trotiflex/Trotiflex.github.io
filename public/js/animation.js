@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         },
         {
-            threshold: 0.3, // Déclenche lorsque 20% de l'élément est visible
+            threshold: 0.2, // Déclenche lorsque 20% de l'élément est visible
         }
     );
 
